@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* CSS standard variable  */
+:root {
+    --header-height: 3rem; /* 48px*/
+    /* Colors */
+    --first-color: #069c54;
+    --first-color-alt: #048654;
+    --title-color: #393939;
+    --text-color: #707070;
+    --text-color-light: #a7a7a7;
+    --body-color: #fbfefd;
+    --container-color: #ffffff;
+    /* Fonts  */
+    --body-font: "Open Sans", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.938rem;
+    --smaller-font-size: 0.938rem;
+  
+    /* Font weight  */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /* Margins  */
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+  
+    /* Z index  */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+
+/* Using vars when the screen goes beyond 768px  */
+@media screen and (min-width: 768px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: 0.875rem;
+      --smaller-font-size: 0.813rem;
+    }
+  }
+  
+
+/* HTML BASE  */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body{
+    margin:var(--header-height);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h3, p, ul{
+    margin: 0;
+  }
+
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+  }
+  
+img{
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+/*==============================Layout============================== */
+.body-container{
+  max-width:960px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.bd-grid{
+  display: grid;
+  gap: 1.5rem;
+
+}
+
+.l-header{
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+
+}
+
+/*==============================Menu============================== */
+.menu-container{
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  
+
+}
+
+.menu-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--container-color);
+  border-radius: 20% 15px 15px 15px;
+  box-shadow: 0 2px 4px rgba(3,74,40,.15);
+
+}
+
+.menu-img{
+  width: 100%; 
+  height: auto; 
+  border-radius: 20% 15px 0 0;
+
+}
+
+
+.menu-name{
+  font-size: var(--normal-font-size);
+  padding-top: 0.5rem;
+  color: var(--title-color);
+}
+
+ .menu-preci{
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+
+
+.menu-detail{
+  margin-bottom: var(--mb-1);
+  color: var( --text-color);
+  font-size: var(--small-font-size);
+  text-align: start;
+}
+
+.menu-name, .menu-preci, .menu-detail{
+  flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
+}
+
+/*==============================Button============================== */
+.button{
+  font-family:  var( --body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  margin-top: var(--mb-1);
+  padding: 0.5rem 1rem;
+  border-radius: 0px 15px 0 10px;
+  border-width:0;
+  cursor: pointer;
+}
+
+/*==============================Shopping Cart============================== */
+/* Shopping Cart container */
+.modal
+{
+ width: 40%;
+ border-radius: 10px;
+ border: 0;
+ background-color: #ffffff;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ animation: slide-from-right 0.2s ease-out forwards;
+ top: -0%;
+ right: -60%;
+
+ 
+}
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+.cart-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+
+
+}
+
+.cart-item{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.cart-title{
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  
+}
+
+.cart-total{
+  margin: 1rem 0;
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-total-name{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.cart-total-name:nth-child(1),
+.cart-total-name:nth-child(2),
+.cart-total-name:nth-child(3) {
+  color: gray;
+}
+.cart-total-name:nth-child(4){
+  padding-top: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+
+
+
+.cart-item-image{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cart-item-image img{
+  border-radius: 20px;
+}
+
+.cart-item-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-quantity{
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-price{
+  display: flex;
+  align-items: center;
+}
+
+.minus-btn, .plus-btn{
+  font-size: 1rem;
+  color: var(--title-color);
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #E0E0E0;
+  padding: 0.5rem 0.8rem;
+}
+
+.minus-btn:hover, .plus-btn:hover, .close-btn:hover{
+  background-color: #D0D0D0;
+}
+
+.cart-btn{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.close-btn, .checkout-btn{
+  font-family:  var( --body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+  border: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.checkout-btn{
+  background-color: var(--first-color);
+  color: #ffff;
+}
+
+.checkout-btn:hover, .addCart-btn:hover {
+  background-color: var(--first-color-alt);
+}
+
+/*==============================Responsive Screen============================== */
+@media screen and (min-width: 576px){
+  
+}
+
+@media screen and (min-width: 768px){
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+  
+  }
+
+  .nav-list{
+    display:flex;
+  }
+
+  .nav-item{
+    margin-bottom: 0;
+    margin-left: var(--mb-5);
+  }
+
+  .nav-toggle{
+    display: none ;
+  }
+
+  .menu-container{
+    grid-template-columns: repeat(3, 256px);
+    column-gap:3rem;
+  }
+
+  .menu-img{
+    width:100%; 
+  }
+
+
+  body{
+    margin:0;
+  }
+
+}
+
+@media screen and (min-width: 960px){
+  .bd-container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-height: 721px){
+
+}
+
+
+@keyframes slide-from-right {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
