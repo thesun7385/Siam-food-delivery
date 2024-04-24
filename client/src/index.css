@@ -118,6 +118,13 @@ img{
 
 }
 
+.fetching-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 /*==============================Menu============================== */
 .menu-container{
   grid-template-columns: repeat(2, 1fr);
@@ -210,8 +217,6 @@ img{
   flex-direction: column;
   justify-content: space-between;
   height: 80vh;
-
-
 }
 
 .cart-item{
@@ -224,7 +229,6 @@ img{
   font-weight: var(--font-semi-bold);
   font-size: var(--h2-font-size);
   color: var(--title-color);
-  
 }
 
 .cart-total{
@@ -301,7 +305,18 @@ img{
   gap: 1rem;
 }
 
-.close-btn, .checkout-btn{
+.close-btn{
+  font-family:  var( --body-font);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--normal-font-size);
+  border: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.checkout-btn{
   font-family:  var( --body-font);
   font-weight: var(--font-semi-bold);
   font-size: var(--normal-font-size);
@@ -317,9 +332,63 @@ img{
   color: #ffff;
 }
 
-.checkout-btn:hover, .addCart-btn:hover {
+.checkout-btn:hover, .addCart-btn:hover, .ok-btn:hover {
   background-color: var(--first-color-alt);
 }
+
+/*==============================Checkout window============================== */
+.submit-title{
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+}
+
+.total-checkout{
+  margin: 1rem 0;
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+
+.btn-checkout-container{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Control form */
+.control{
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.control label{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+.control input{
+  width: 100%;
+  max-width: 20rem;
+  font: inherit;
+  padding: 0.2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.control-row{
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
 
 /*==============================Responsive Screen============================== */
 @media screen and (min-width: 576px){

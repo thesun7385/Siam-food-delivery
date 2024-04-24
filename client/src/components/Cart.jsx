@@ -68,7 +68,7 @@ export default function Cart() {
               <p className="cart-total-name">Delivery: Free</p>
 
               <p className="cart-total-name">
-                Total: {currencyFormatter.format(cartTotal * 1.13)}{" "}
+                Total: {currencyFormatter.format(cartTotal * 1.13)}
               </p>
             </p>
           )}
@@ -79,9 +79,13 @@ export default function Cart() {
             </Button>
 
             {cartCtx.items.length > 0 && (
-              <button className="checkout-btn" onClick={handleGoToCheckOut}>
+              <Button
+                className="checkout-btn"
+                textOnly
+                onClick={handleGoToCheckOut}
+              >
                 Checkout
-              </button>
+              </Button>
             )}
           </p>
         </div>
