@@ -1,6 +1,6 @@
 import MealItem from "./MealItem.jsx";
 import UseHttp from "../hooks/useHttp.js";
-// import Error from "./Error.jsx";
+import Error from "./Error.jsx";
 
 const requestConfig = {};
 
@@ -19,13 +19,12 @@ export default function meals() {
   }
 
   if (error) {
-    return <p>Failed to fetch meals</p>;
+    return <Error title="Failed to load the menu!" message={error} />;
   }
 
   return (
     //-- Menu --
     <section class="menu section bd-container" id="menu">
-      <span class="section-subtitle"></span>
       <h2 class="section-title">Menu</h2>
       <ul id="meals">
         {/* -- List -- */}

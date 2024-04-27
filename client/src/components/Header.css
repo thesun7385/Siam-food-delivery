@@ -9,34 +9,63 @@
     justify-content: space-between ;
     align-items: center;
 }
+
+/* ---- Change backgound  ---- */
+.scroll-header{
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Show menu  */ 
+.show-menu{
+  /* Move  nav-bar down  */
+  top: var(--header-height); 
+}
+
+
+.active-link{
+  color:red;
+}
   
-/* Hide the nav bar when the screen < 768px */
+/* New nav bar when the screen < 768px */
 @media screen and (max-width: 768px) {
-  /* Drop-down nav bar */
-    .nav-menu{
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      padding: 1.5rem 0 1rem;
-      text-align: center;
-      background-color: var(--body-color);
-      transition: .4s;
-      box-shadow: 0 4px 4px rgba(0,0,0,0.1);
-      border-radius: 0 0 1rem 1rem;
-      z-index: var(--z-fixed);
-    }
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0 1rem;
+    text-align: center;
+    background-color: var(--body-color);
+    transition: .4s;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+    border-radius: 0 0 1rem 1rem;
+    z-index: var(--z-fixed);
+  }
+  .active-link{
+    color:red;
+  }
+
+  .show-menu{
+    top: 2.5rem; 
+  }
 }
 
 
 .nav-item{
   margin-bottom: var(--mb-2);
+
 }
 
 .nav-link, .nav-toggle{
   color: var(--title-color);
   font-size: var(--normal-font-size);
   font-weight: var( --font-semi-bold);
+}
+
+.title{
+  display: flex ;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-logo{
@@ -48,14 +77,13 @@
 
 
 #thai-food-icon{
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
 }
 
 .nav-link{
   transition: .3s;
- 
-  
+
 }
 
 .nav-link:hover{
@@ -63,8 +91,18 @@
 }
 
 .nav-toggle{
-  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
+}
+
+
+
+.cart-toggle-icon{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 

@@ -1,11 +1,14 @@
 import React from "react";
+import thaiFood from "../assets/thai-food.png";
 
 export default function Error({ title, message }) {
   return (
     <div className="error">
-      Error
-      <h2>{title}</h2>
-      <p>{message}</p>
+      <h1>404 Page Not Found</h1>
+      <p>{title}</p>
+      <img src={thaiFood} alt="Thai food" />
+      <button className="btn-error">Contact us</button>
+      {/* <p>{message}</p> */}
     </div>
   );
 }
