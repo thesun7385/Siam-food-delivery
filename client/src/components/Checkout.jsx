@@ -28,7 +28,10 @@ export default function Checkout() {
     error,
     sendRequest,
     clearData,
-  } = useHttp("http://localhost:3000/orders", requestConfig);
+  } = useHttp(
+    "hhttps://siam-delivery-server.onrender.com/orders",
+    requestConfig
+  );
 
   // Get the total price and tax
   const cartTotal = cartCtx.items.reduce(

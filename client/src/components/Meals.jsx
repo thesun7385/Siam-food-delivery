@@ -11,7 +11,11 @@ export default function meals() {
     data: loadedMeals,
     isLoading,
     error,
-  } = UseHttp("http://localhost:3000/meals", requestConfig, []);
+  } = UseHttp(
+    "https://siam-delivery-server.onrender.com/meals",
+    requestConfig,
+    []
+  );
 
   // Fetching meals
   if (isLoading) {
