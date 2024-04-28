@@ -17,11 +17,7 @@ export default function MealItem({ meal }) {
     <li>
       {/* Food card */}
       <div className="menu-content">
-        <img
-          className="menu-img"
-          src={`http://localhost:3000/${meal.image}`}
-          alt={meal.name}
-        />
+        <img className="menu-img" src={meal.image} alt={meal.name} />
         <h3 className="menu-name">{meal.name}</h3>
         <span class="menu-detail">{meal.description}</span>
         <span class="menu-preci">{currencyFormatter.format(meal.price)}</span>

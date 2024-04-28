@@ -14,7 +14,7 @@ export default function CartItem({
 
       <div className="cart-item">
         <div className="cart-item-image">
-          <img src={`http://localhost:3000/${image}`} alt={name} />
+          <img src={image} alt={name} />
         </div>
 
         <div className="cart-item-name">

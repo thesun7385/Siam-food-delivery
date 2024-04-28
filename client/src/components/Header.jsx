@@ -15,12 +15,6 @@ export default function Header() {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Todo:
-  // - Add a function to show the menu from icon - DONE
-  // - Responsive design for the odering page
-  // - Handle error when the user clicks on the cart icon
-  // - Move backend to MOngoDB
-
   // Use effect to listen to the scroll event
   useEffect(() => {
     const handleScroll = () => {
