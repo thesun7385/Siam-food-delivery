@@ -1,4 +1,4 @@
-# Siam Food Delevery 
+# Siam Food Delivery
 
 Siam Food Delivery is a single-page web application developed using the MERN stack. It offers users various great features, including a shopping cart and checkout feature
 
