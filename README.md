@@ -6,8 +6,8 @@ Siam Food Delivery is a single-page web application developed using the MERN sta
 
 ## Table of contents
 - Basic Features
-- Front-end
 - Back-end
+- Front-end
 - Installation Steps
 - Running the Application
 - License
