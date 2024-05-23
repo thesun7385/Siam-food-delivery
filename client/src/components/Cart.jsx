@@ -30,7 +30,7 @@ export default function Cart() {
 
   return (
     <Modal
-      className="cart"
+      className={`modal ${userProgressCtx.isClosing ? "closing" : ""}`} // Add the closing class when the modal is closing
       open={userProgressCtx.progress === "cart"}
       onClose={userProgressCtx.progress === "cart" ? handleCloseCart : null}
     >

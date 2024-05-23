@@ -673,8 +673,6 @@ img{
 }
 
 
-
-
 @media screen and (min-width: 576px){
   .button{
     font-family:  var( --body-font);
@@ -731,8 +729,8 @@ img{
   .modal::backdrop {
     background-color: rgba(0, 0, 0, 0.55);
   }
-  
-  
+
+
   .cart-container{
     display: flex;
     flex-direction: column;
@@ -951,6 +949,14 @@ img{
 
 
 
+/*==============================Animation============================== */
+
+
+  /* Add a class for closing the modal */
+  .modal.closing {
+    animation: slide-to-right 0.2s ease-out forwards;
+  }
+
 
 @keyframes slide-from-right {
   from {
@@ -958,5 +964,15 @@ img{
   }
   to {
       transform: translateX(0);
+  }
+}
+
+
+@keyframes slide-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }

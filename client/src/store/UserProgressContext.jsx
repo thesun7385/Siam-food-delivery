@@ -12,13 +12,18 @@ const UserProgressContext = createContext({
 // Component to manage the user progress
 export function UserProgressContextProvider({ children }) {
   const [useProgress, setUserProgress] = useState({});
-
+  const [isClosing, setIsClosing] = useState(false);
   function showCart() {
     setUserProgress("cart");
   }
 
+  // Trigger the hideCart function and the animaton
   function hideCart() {
-    setUserProgress("");
+    setIsClosing(true);
+    setTimeout(() => {
+      setUserProgress("");
+      setIsClosing(false);
+    }, 200); // Match the duration of the closing animation
   }
 
   function showCheckout() {
@@ -26,16 +31,20 @@ export function UserProgressContextProvider({ children }) {
   }
 
   function hideCheckout() {
-    setUserProgress("");
+    setIsClosing(true);
+    setTimeout(() => {
+      setUserProgress("");
+    }, 200); // Match the duration of the closing animation
   }
 
-  // User progress context object
+  // User progress context object for the provider
   const userProgressCtx = {
     progress: useProgress,
     showCart,
     hideCart,
     showCheckout,
     hideCheckout,
+    isClosing,
   };
 
   return (

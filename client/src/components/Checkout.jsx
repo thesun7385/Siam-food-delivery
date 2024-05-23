@@ -29,7 +29,7 @@ export default function Checkout() {
     sendRequest,
     clearData,
   } = useHttp(
-    "hhttps://siam-delivery-server.onrender.com/orders",
+    "https://siam-delivery-server.onrender.com/orders",
     requestConfig
   );
 
@@ -41,12 +41,14 @@ export default function Checkout() {
 
   // Function to close the checkout modal
   function handleClose() {
-    userProgressCtx.hideCheckout();
+    // userProgressCtx.hideCheckout();
+    userProgressCtx.hideCart();
   }
 
   // Function to finish the checkout
   function handleFinish() {
-    userProgressCtx.hideCheckout();
+    // userProgressCtx.hideCheckout();
+    userProgressCtx.hideCart();
     cartCtx.clearCart();
     clearData();
   }
@@ -113,7 +115,11 @@ export default function Checkout() {
   }
 
   return (
-    <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
+    <Modal
+      className={`modal ${userProgressCtx.isClosing ? "closing" : ""}`}
+      open={userProgressCtx.progress === "checkout"}
+      onClose={handleClose}
+    >
       <div className="submit-title">Checkout</div>
       <form onSubmit={handleSubmit}>
         <Input label="Full Name" type="text" id="name" />
