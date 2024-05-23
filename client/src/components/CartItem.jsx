@@ -31,7 +31,7 @@ export default function CartItem({
         </div>
 
         <span className="cart-item-price">
-          {currencyFormatter.format(price)}
+          {currencyFormatter.format(price * quantity)}
         </span>
       </div>
     </li>

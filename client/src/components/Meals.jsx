@@ -1,30 +1,34 @@
 import MealItem from "./MealItem.jsx";
-import UseHttp from "../hooks/useHttp.js";
-import Error from "./Error.jsx";
+// import UseHttp from "../hooks/useHttp.js";
+// import Error from "./Error.jsx";
 
-const requestConfig = {};
+import { MENU } from "../available-meals.js";
+
+// const requestConfig = {};
+
+// Update: User MEALS instead of loadedMeals for
 
 // Meals conponent
 export default function meals() {
   // Fetch the meals data
-  const {
-    data: loadedMeals,
-    isLoading,
-    error,
-  } = UseHttp(
-    "https://siam-delivery-server.onrender.com/meals",
-    requestConfig,
-    []
-  );
+  // const {
+  //   data: loadedMeals,
+  //   isLoading,
+  //   error,
+  // } = UseHttp(
+  //   "https://siam-delivery-server.onrender.com/meals",
+  //   requestConfig,
+  //   []
+  // );
 
-  // Fetching meals
-  if (isLoading) {
-    return <p className="fetching-message">Fetching meals...</p>;
-  }
+  // // Fetching meals
+  // if (isLoading) {
+  //   return <p className="fetching-message">Fetching meals...</p>;
+  // }
 
-  if (error) {
-    return <Error title="Failed to load the menu!" message={error} />;
-  }
+  // if (error) {
+  //   return <Error title="Failed to load the menu!" message={error} />;
+  // }
 
   return (
     //-- Menu --
@@ -33,7 +37,7 @@ export default function meals() {
       <ul id="meals">
         {/* -- List -- */}
         <div class="menu-container bd-grid">
-          {loadedMeals.map((meal) => (
+          {MENU.map((meal) => (
             // MealItem component
             <MealItem key={meal.id} meal={meal} />
           ))}
