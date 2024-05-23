@@ -115,7 +115,9 @@ export default function Header() {
                 <i type="button" className="material-symbols-outlined nav-cart">
                   shopping_cart
                 </i>
-                <p> Cart ({totalCartItems})</p>
+                <span className="badge badge-warning" id="lblCartCount">
+                  {totalCartItems}
+                </span>
               </button>
             </div>
             {/* Drop-down menu icon */}
